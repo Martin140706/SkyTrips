@@ -1,0 +1,24 @@
+{
+  "paises": [
+    {
+      "nombre": "Argentina",
+      "ciudades": ["Buenos Aires"]
+    },
+    {
+      "nombre": "Noruega",
+      "ciudades": ["Oslo"]
+    },
+    {
+      "nombre": "Francia",
+      "ciudades": ["París"]
+    },
+    {
+      "nombre": "Suecia",
+      "ciudades": ["Estocolmo"]
+    },
+    {
+      "nombre": "España",
+      "ciudades": ["Mallorca"]
+    }
+  ]
+}

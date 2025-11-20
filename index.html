@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkyTrips - Inicio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Sky<span>Trips</span></div>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#qSomos">¿Quienes somos?</a>
+        <button class="button-34" role="button">CONTACTANOS</button>
+        <button class="cart-button" id="cartButton">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>SkyTrips - Viaja Sin Límites</h1>
+          <p>
+            Paquetes completos con vuelo incluido a los mejores destinos del
+            mundo
+          </p>
+        </div>
+      </section>
+
+      <!-- Contenido principal que cubrirá el hero -->
+      <section class="main-content" id="paquetes">
+        <h2>Nuestros Paquetes Destacados</h2>
+        <!-- Resto de tu contenido aquí -->
+        <div>
+          <div class="travel-container">
+            <button class="carousel-nav" id="prevBtn">&#10094;</button>
+
+            <div class="travel-carousel" id="carousel">
+              <!-- Card 1 -->
+              <div class="travel-card">
+                <img
+                  src="./images/Francia.png"
+                  alt="París"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3 class="card-title">París, Francia</h3>
+                  <p class="card-price">$1,200 USD</p>
+                  <a href="#" class="card-button">Conocer más</a>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="travel-card">
+                <img
+                  src="./images/OsloNorway.png"
+                  alt="Oslo Noruega"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3 class="card-title">Oslo, Noruega</h3>
+                  <p class="card-price">$2,500 USD</p>
+                  <a href="#" class="card-button">Conocer más</a>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="travel-card">
+                <img
+                  src="./images/EstocolmoSuecia.png"
+                  alt="Estocolmo Suecia"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3 class="card-title">Estocolmo, Suecia</h3>
+                  <p class="card-price">$1,800 USD</p>
+                  <a href="#" class="card-button">Conocer más</a>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="travel-card">
+                <img
+                  src="./images/BariItalia.png"
+                  alt="Bari Italia"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3 class="card-title">Bari, Italia</h3>
+                  <p class="card-price">$1,500 USD</p>
+                  <a href="#" class="card-button">Conocer más</a>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="travel-card">
+                <img
+                  src="./images/MallorcaEspaña.jpeg"
+                  alt="Mallorca España"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3 class="card-title">Mallorca, España</h3>
+                  <p class="card-price">$2,200 USD</p>
+                  <a href="#" class="card-button">Conocer más</a>
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-nav" id="nextBtn">&#10095;</button>
+          </div>
+        </div>
+        <section class="busquedaVuelos">
+          <h2>Busca tu vuelo ideal</h2>
+          <div class="flight-type-selector">
+            <button
+              type="button"
+              class="flight-type-btn active"
+              data-type="roundtrip"
+            >
+              Ida y vuelta
+            </button>
+            <button type="button" class="flight-type-btn" data-type="oneway">
+              Solo ida
+            </button>
+          </div>
+          <form class="search-form">
+            <select id="origen" class="search-input select" required>
+              <option value="" selected disabled>Selecciona origen</option>
+            </select>
+            <select id="destino" class="search-input select" required>
+              <option value="" selected disabled>Selecciona destino</option>
+            </select>
+            <input
+              type="date"
+              placeholder="Fecha de ida"
+              class="search-input"
+              required
+              title="Seleccione la fecha de salida"
+            />
+
+            <div id="return-date-container">
+              <input
+                type="date"
+                placeholder="Fecha de vuelta"
+                class="search-input"
+                title="Seleccione la fecha de regreso"
+              />
+            </div>
+            <div class="passenger-counter">
+              <label>Pasajeros:</label>
+              <div class="passenger-controls">
+                <button
+                  type="button"
+                  class="passenger-btn"
+                  id="passenger-minus"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  id="passengers"
+                  class="passenger-input"
+                  value="1"
+                  min="1"
+                  max="8"
+                  readonly
+                />
+                <button type="button" class="passenger-btn" id="passenger-plus">
+                  +
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="search-button">Buscar vuelos</button>
+          </form>
+        </section>
+        <section class="quienesSomos" id="qSomos">
+          <h2>¿Quiénes somos?</h2>
+          <p>
+            Somos SkyTrips, una agencia de viajes dedicada a ofrecerte los
+            mejores paquetes turísticos con vuelos incluidos a destinos
+            increíbles alrededor del mundo. Nuestro objetivo es hacer que tu
+            experiencia de viaje sea inolvidable y sin complicaciones.
+          </p>
+          <p>
+            Con años de experiencia en la industria del turismo, nuestro equipo
+            está comprometido a brindarte un servicio excepcional y asesorarte
+            en cada paso de tu viaje.
+          </p>
+        </section>
+      </section>
+      <section class="contacto" id="contactForm">
+        <h2>Contacto</h2>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre completo:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Tu correo:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="button-34">Enviar mensaje</button>
+
+          <p id="contact-status" class="contact-status"></p>
+        </form>
+      </section>
+    </main>
+    <footer></footer>
+    <!-- EmailJS PRIMERO -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Tus scripts DESPUÉS -->
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+
+    <!-- Agrega esto antes del cierre de  -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <button class="modal-close">&times;</button>
+        <div class="modal-content">
+          <h2 id="modalTitle">París, Francia</h2>
+          <div class="modal-grid">
+            <div class="modal-image-container">
+              <img
+                id="modalImage"
+                src="./images/Francia.png"
+                alt="Destino"
+                class="modal-image"
+              />
+            </div>
+            <div class="modal-details">
+              <p class="modal-price" id="modalPrice">$1,200 USD</p>
+              <div class="modal-form">
+                <div class="form-group">
+                  <label>Tipo de viaje:</label>
+                  <div class="flight-type-toggle">
+                    <button
+                      type="button"
+                      class="flight-type-btn active"
+                      data-type="roundtrip"
+                    >
+                      Ida y vuelta
+                    </button>
+                    <button
+                      type="button"
+                      class="flight-type-btn"
+                      data-type="oneway"
+                    >
+                      Solo ida
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="modalDepartureDate">Fecha de ida:</label>
+                  <input
+                    type="date"
+                    id="modalDepartureDate"
+                    class="search-input"
+                    required
+                  />
+                </div>
+
+                <div class="form-group" id="modalReturnDateContainer">
+                  <label for="modalReturnDate">Fecha de vuelta:</label>
+                  <input
+                    type="date"
+                    id="modalReturnDate"
+                    class="search-input"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="modalPassengers">Pasajeros:</label>
+                  <div class="passenger-controls">
+                    <button
+                      type="button"
+                      class="passenger-btn"
+                      id="modalPassengerMinus"
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      id="modalPassengers"
+                      class="passenger-input"
+                      value="1"
+                      min="1"
+                      max="8"
+                      readonly
+                    />
+                    <button
+                      type="button"
+                      class="passenger-btn"
+                      id="modalPassengerPlus"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-activities">
+                <h3>Actividades incluidas:</h3>
+                <ul id="activitiesList">
+                  <!-- Se llenará dinámicamente -->
+                </ul>
+              </div>
+              <div class="modal-insurance">
+                <h3>Seguro de viaje:</h3>
+                <p id="insuranceInfo">
+                  Cobertura médica completa, cancelación por emergencia y
+                  pérdida de equipaje.
+                </p>
+              </div>
+              <div class="modal-insurance-option">
+                <h3>Seguro de viaje:</h3>
+                <div class="insurance-toggle-container">
+                  <label class="insurance-toggle">
+                    <input type="checkbox" id="insuranceToggle" checked />
+                    <span class="slider round"></span>
+                  </label>
+                  <span class="insurance-text"
+                    >Incluir seguro (+$<span id="insuranceCost">100</span
+                    >USD)</span
+                  >
+                </div>
+                <p id="insuranceInfo">
+                  Cobertura médica completa, cancelación por emergencia y
+                  pérdida de equipaje.
+                </p>
+              </div>
+
+              <!-- Agrega esto antes del botón de reservar -->
+              <div class="modal-total">
+                <h3>Total:</h3>
+                <p id="modalTotalPrice">$1,300 USD (≈ $1,300,000 ARS)</p>
+              </div>
+              <button class="modal-book-button">Reservar ahora</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay">
+      <div class="cart-header">
+        <h3>Tu Carrito</h3>
+        <button class="cart-close" id="cartClose">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Los items del carrito se agregarán aquí dinámicamente -->
+      </div>
+      <div class="cart-summary">
+        <button class="clear-cart-button" id="clearCartButton">
+          Vaciar Carrito
+        </button>
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotalPrice">$0 ARS</span>
+        </div>
+        <button class="checkout-button" id="checkoutButton">
+          Finalizar Compra
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

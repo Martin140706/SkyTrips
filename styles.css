@@ -1,0 +1,972 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: beige;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  padding: 1.3rem 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2f80ed;
+}
+
+.logo span {
+  color: #ff6b6b;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  border: 0 solid white;
+  padding: 0.5rem;
+}
+
+.contact {
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 5rem;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 100%
+  );
+}
+
+/* BANNER */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+      no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  margin-top: 80px; /* Para compensar el header */
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+  display: inline-block;
+  background: #ff6b6b;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background: #ff5252;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido que cubrirá el hero al hacer scroll */
+.main-content {
+  position: relative;
+  background: white;
+  min-height: 100vh;
+  padding: 50px 20px;
+  z-index: 10;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CSS */
+.button-34 {
+  background: #5e5df0;
+  border-radius: 999px;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.travel-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  position: relative;
+  padding: 0 50px;
+}
+
+.travel-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.travel-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.travel-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.travel-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-price {
+  font-size: 20px;
+  color: #2a9d8f;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #2a9d8f;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.card-button:hover {
+  background-color: #21867a;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border: none;
+  font-size: 20px;
+  color: #2a9d8f;
+}
+
+.carousel-nav:hover {
+  background: #f1f1f1;
+}
+
+#prevBtn {
+  left: 0;
+}
+
+#nextBtn {
+  right: 0;
+}
+
+/* Estilos para la sección de búsqueda de vuelos */
+.busquedaVuelos {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.busquedaVuelos h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  align-items: end;
+}
+
+.search-input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.search-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  grid-column: 1 / -1;
+  align-items: center;
+}
+
+.search-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el selector de tipo de vuelo */
+.flight-type-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  grid-column: 1 / -1;
+}
+
+.flight-type-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #3498db;
+  background-color: white;
+  color: #3498db;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.flight-type-btn.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.flight-type-btn:not(.active):hover {
+  background-color: #f0f8ff;
+}
+
+/* Ocultar campo de fecha de vuelta cuando se selecciona solo ida */
+#return-date-container {
+  display: block;
+}
+
+.oneway #return-date-container {
+  display: none;
+}
+
+/* Estilos para el contador de pasajeros */
+.passenger-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  grid-column: 1 / -1;
+}
+
+.passenger-counter label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.passenger-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.passenger-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.passenger-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.passenger-btn:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.passenger-input {
+  width: 40px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Quienes Somos - Contenido */
+
+.quienesSomos {
+  background-color: #f0f0f0;
+  padding: 60px 20px;
+  text-align: center;
+}
+.quienesSomos h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.quienesSomos p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilos para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal-content {
+  padding: 40px;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.modal-image-container {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-price {
+  font-size: 24px;
+  color: #2a9d8f;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.modal-form {
+  margin-bottom: 20px;
+}
+
+.modal-form .form-group {
+  margin-bottom: 15px;
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.modal-activities {
+  margin: 20px 0;
+}
+
+.modal-activities h3,
+.modal-insurance h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.modal-activities ul {
+  list-style-type: none;
+}
+
+.modal-activities li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-insurance p {
+  line-height: 1.5;
+  color: #555;
+}
+
+.modal-book-button {
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.modal-book-button:hover {
+  background-color: #21867a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    padding: 30px 20px;
+  }
+}
+
+/* Estilos para el toggle de seguro */
+.insurance-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 10px;
+}
+
+.insurance-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2a9d8f;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.insurance-text {
+  vertical-align: top;
+  line-height: 34px;
+}
+
+.modal-insurance-option {
+  margin: 20px 0;
+}
+
+.modal-total {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.modal-total h3 {
+  margin-bottom: 10px;
+}
+
+/* Estilos para el carrito */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+.cart-overlay.open {
+  transform: translateX(0);
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-items {
+  padding: 20px;
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cart-item-price {
+  color: #2a9d8f;
+  font-weight: bold;
+}
+
+.cart-summary {
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* Botón del carrito en el header */
+.cart-button {
+  position: relative;
+  margin-left: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Estilos para el botón de vaciar carrito */
+.clear-cart-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.clear-cart-button:hover {
+  background-color: #ff5252;
+}
+
+/* Estilo para el botón de eliminar item */
+.remove-item {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.3s;
+}
+
+.remove-item:hover {
+  color: #ff5252;
+}
+
+/* Ajustes para el item del carrito */
+.cart-item-details {
+  flex: 1;
+  position: relative;
+}
+
+.cart-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Agrega esto en la sección de estilos del modal */
+.modal-insurance-option {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.insurance-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.insurance-toggle {
+  margin-right: 0; /* Eliminamos el margen derecho que tenía antes */
+}
+
+.insurance-text {
+  line-height: 1.5; /* Ajustamos el line-height para mejor espaciado */
+  vertical-align: middle;
+}
+
+#insuranceInfo {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Estilos para el toggle de tipo de viaje */
+.flight-type-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.flight-type-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #3498db;
+  background-color: white;
+  color: #3498db;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.flight-type-btn.active {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Estilos para los inputs de fecha */
+.search-input[type='date'] {
+  padding: 10px;
+  width: 100%;
+}
+
+/* ================================
+   FORMULARIO DE CONTACTO
+================================= */
+
+.contacto {
+  padding: 60px 20px;
+  background: #f7f7f7;
+  border-top: 2px solid #ddd;
+}
+
+.contacto h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Formulario general */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Grupo de inputs */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Inputs y textarea */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  font-family: inherit;
+}
+
+/* Hover + focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4a90e2;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.18);
+}
+
+/* Botón de enviar */
+.contact-form button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  background: #4a90e2;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #357ac8;
+}
+
+/* Mensaje de estado */
+.contact-status {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1rem;
+}
